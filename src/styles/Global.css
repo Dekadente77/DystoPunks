@@ -1,0 +1,10 @@
+@font-face {
+  font-family: m5x7;
+  src: url("../fonts/m5x7.ttf") format("truetype");
+}
+
+body {
+  font-family: m5x7;
+  font-size: calc(12px + 3vmin);
+  line-height: calc(12px + 2vmin);
+}
