@@ -7,7 +7,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-        Welcome to a tech-filled dystopian future <br/> where only 2077 Punks survived.
+        Welcome to a tech-filled dystopian future <br/> where only <b>2077</b> Punks survived.
         </p>
       </header>
     </div>

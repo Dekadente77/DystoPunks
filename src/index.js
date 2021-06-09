@@ -4,12 +4,16 @@ import './index.css';
 import './styles/Global.css';
 import App from './components/App';
 import reportWebVitals from './reportWebVitals';
-import TimerButton from './components/TimerButton'
+import TimerButton from './components/TimerButton';
+import DystoTable from './components/DystoTable'
+import DystoTraits from './components/DystoTraits'
 
 ReactDOM.render(
   <React.StrictMode>
     <App />
     <TimerButton />
+    <DystoTable />
+    <DystoTraits />
   </React.StrictMode>,
   document.getElementById('root')
 );
