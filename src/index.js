@@ -4,10 +4,12 @@ import './index.css';
 import './styles/Global.css';
 import App from './components/App';
 import reportWebVitals from './reportWebVitals';
+import TimerButton from './components/TimerButton'
 
 ReactDOM.render(
   <React.StrictMode>
     <App />
+    <TimerButton />
   </React.StrictMode>,
   document.getElementById('root')
 );
