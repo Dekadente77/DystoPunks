@@ -6,7 +6,7 @@
 body {
   font-family: m5x7;
   font-size: calc(12px + 3vmin);
-  line-height: calc(12px + 2vmin);
+  line-height: calc(12px + 1vmin);
 }
 
 a {

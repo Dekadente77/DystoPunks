@@ -74,45 +74,45 @@ const useStyles = makeStyles({
 })
 
 const data= [
-    { attribute: 'Alien', number: 7, example: <Avatar style={{ border: "0px", height: "50px", width: "50px"}} variant="square" src={alien1} />, examples: <AvatarGroup max={6} spacing={0}>
-    <Avatar style={{ border: "0px", height: "50px", width: "50px"}} variant="square" src={alien2} />
-    <Avatar style={{ border: "0px", height: "50px", width: "50px"}} variant="square" src={alien3} />
-    <Avatar style={{ border: "0px", height: "50px", width: "50px"}} variant="square" src={alien4} />
-    <Avatar style={{ border: "0px", height: "50px", width: "50px"}} variant="square" src={alien5} />
-    <Avatar style={{ border: "0px", height: "50px", width: "50px"}} variant="square" src={alien6} />
-    <Avatar style={{ border: "0px", height: "50px", width: "50px"}} variant="square" src={alien7} />
+    { attribute: 'Alien', number: 7, example: <Avatar style={{ border: "0px", height: "48px", width: "48px"}} variant="square" src={alien1} />, examples: <AvatarGroup max={6} spacing={0}>
+    <Avatar style={{ border: "0px", height: "48px", width: "48px"}} variant="square" src={alien2} />
+    <Avatar style={{ border: "0px", height: "48px", width: "48px"}} variant="square" src={alien3} />
+    <Avatar style={{ border: "0px", height: "48px", width: "48px"}} variant="square" src={alien4} />
+    <Avatar style={{ border: "0px", height: "48px", width: "48px"}} variant="square" src={alien5} />
+    <Avatar style={{ border: "0px", height: "48px", width: "48px"}} variant="square" src={alien6} />
+    <Avatar style={{ border: "0px", height: "48px", width: "48px"}} variant="square" src={alien7} />
   </AvatarGroup> },
-    { attribute: 'Ape', number: 20, example: <Avatar style={{ border: "0px", height: "50px", width: "50px"}} variant="square" src={ape1} />, examples: <AvatarGroup max={6} spacing={0}>
-    <Avatar style={{ border: "0px", height: "50px", width: "50px"}} variant="square" src={ape2} />
-    <Avatar style={{ border: "0px", height: "50px", width: "50px"}} variant="square" src={ape3} />
-    <Avatar style={{ border: "0px", height: "50px", width: "50px"}} variant="square" src={ape4} />
-    <Avatar style={{ border: "0px", height: "50px", width: "50px"}} variant="square" src={ape5} />
-    <Avatar style={{ border: "0px", height: "50px", width: "50px"}} variant="square" src={ape6} />
-    <Avatar style={{ border: "0px", height: "50px", width: "50px"}} variant="square" src={ape7} />
+    { attribute: 'Ape', number: 20, example: <Avatar style={{ border: "0px", height: "48px", width: "48px"}} variant="square" src={ape1} />, examples: <AvatarGroup max={6} spacing={0}>
+    <Avatar style={{ border: "0px", height: "48px", width: "48px"}} variant="square" src={ape2} />
+    <Avatar style={{ border: "0px", height: "48px", width: "48px"}} variant="square" src={ape3} />
+    <Avatar style={{ border: "0px", height: "48px", width: "48px"}} variant="square" src={ape4} />
+    <Avatar style={{ border: "0px", height: "48px", width: "48px"}} variant="square" src={ape5} />
+    <Avatar style={{ border: "0px", height: "48px", width: "48px"}} variant="square" src={ape6} />
+    <Avatar style={{ border: "0px", height: "48px", width: "48px"}} variant="square" src={ape7} />
   </AvatarGroup> },
-    { attribute: 'Robot', number: 50, example: <Avatar style={{ border: "0px", height: "50px", width: "50px"}} variant="square" src={robot1} />, examples: <AvatarGroup max={6} spacing={0}>
-    <Avatar style={{ border: "0px", height: "50px", width: "50px"}} variant="square" src={robot2} />
-    <Avatar style={{ border: "0px", height: "50px", width: "50px"}} variant="square" src={robot3} />
-    <Avatar style={{ border: "0px", height: "50px", width: "50px"}} variant="square" src={robot4} />
-    <Avatar style={{ border: "0px", height: "50px", width: "50px"}} variant="square" src={robot5} />
-    <Avatar style={{ border: "0px", height: "50px", width: "50px"}} variant="square" src={robot6} />
-    <Avatar style={{ border: "0px", height: "50px", width: "50px"}} variant="square" src={robot7} />
+    { attribute: 'Robot', number: 50, example: <Avatar style={{ border: "0px", height: "48px", width: "48px"}} variant="square" src={robot1} />, examples: <AvatarGroup max={6} spacing={0}>
+    <Avatar style={{ border: "0px", height: "48px", width: "48px"}} variant="square" src={robot2} />
+    <Avatar style={{ border: "0px", height: "48px", width: "48px"}} variant="square" src={robot3} />
+    <Avatar style={{ border: "0px", height: "48px", width: "48px"}} variant="square" src={robot4} />
+    <Avatar style={{ border: "0px", height: "48px", width: "48px"}} variant="square" src={robot5} />
+    <Avatar style={{ border: "0px", height: "48px", width: "48px"}} variant="square" src={robot6} />
+    <Avatar style={{ border: "0px", height: "48px", width: "48px"}} variant="square" src={robot7} />
   </AvatarGroup> },
-    { attribute: 'Female', number: 800, example: <Avatar style={{ border: "0px", height: "50px", width: "50px"}} variant="square" src={female1} />, examples: <AvatarGroup max={6} spacing={0}>
-    <Avatar style={{ border: "0px", height: "50px", width: "50px"}} variant="square" src={female2} />
-    <Avatar style={{ border: "0px", height: "50px", width: "50px"}} variant="square" src={female3} />
-    <Avatar style={{ border: "0px", height: "50px", width: "50px"}} variant="square" src={female4} />
-    <Avatar style={{ border: "0px", height: "50px", width: "50px"}} variant="square" src={female5} />
-    <Avatar style={{ border: "0px", height: "50px", width: "50px"}} variant="square" src={female6} />
-    <Avatar style={{ border: "0px", height: "50px", width: "50px"}} variant="square" src={female7} />
+    { attribute: 'Female', number: 800, example: <Avatar style={{ border: "0px", height: "48px", width: "48px"}} variant="square" src={female1} />, examples: <AvatarGroup max={6} spacing={0}>
+    <Avatar style={{ border: "0px", height: "48px", width: "48px"}} variant="square" src={female2} />
+    <Avatar style={{ border: "0px", height: "48px", width: "48px"}} variant="square" src={female3} />
+    <Avatar style={{ border: "0px", height: "48px", width: "48px"}} variant="square" src={female4} />
+    <Avatar style={{ border: "0px", height: "48px", width: "48px"}} variant="square" src={female5} />
+    <Avatar style={{ border: "0px", height: "48px", width: "48px"}} variant="square" src={female6} />
+    <Avatar style={{ border: "0px", height: "48px", width: "48px"}} variant="square" src={female7} />
   </AvatarGroup> },
-    { attribute: 'Male', number: 1200, example: <Avatar style={{ border: "0px", height: "50px", width: "50px"}} variant="square" src={male1} />, examples: <AvatarGroup max={6} spacing={0}>
-    <Avatar style={{ border: "0px", height: "50px", width: "50px"}} variant="square" src={male2} />
-    <Avatar style={{ border: "0px", height: "50px", width: "50px"}} variant="square" src={male3} />
-    <Avatar style={{ border: "0px", height: "50px", width: "50px"}} variant="square" src={male4} />
-    <Avatar style={{ border: "0px", height: "50px", width: "50px"}} variant="square" src={male5} />
-    <Avatar style={{ border: "0px", height: "50px", width: "50px"}} variant="square" src={male6} />
-    <Avatar style={{ border: "0px", height: "50px", width: "50px"}} variant="square" src={male7} />
+    { attribute: 'Male', number: 1200, example: <Avatar style={{ border: "0px", height: "48px", width: "48px"}} variant="square" src={male1} />, examples: <AvatarGroup max={6} spacing={0}>
+    <Avatar style={{ border: "0px", height: "48px", width: "48px"}} variant="square" src={male2} />
+    <Avatar style={{ border: "0px", height: "48px", width: "48px"}} variant="square" src={male3} />
+    <Avatar style={{ border: "0px", height: "48px", width: "48px"}} variant="square" src={male4} />
+    <Avatar style={{ border: "0px", height: "48px", width: "48px"}} variant="square" src={male5} />
+    <Avatar style={{ border: "0px", height: "48px", width: "48px"}} variant="square" src={male6} />
+    <Avatar style={{ border: "0px", height: "48px", width: "48px"}} variant="square" src={male7} />
   </AvatarGroup> }
 ];
 

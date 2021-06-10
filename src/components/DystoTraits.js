@@ -38,13 +38,13 @@ const useStyles = makeStyles({
 })
 
 const data= [
-    { attribute: 'Cyborg', number: 100, example: <Avatar style={{ border: "0px", height: "50px", width: "50px"}} variant="square" src={cyborg1} />, examples: <AvatarGroup max={6} spacing={0}>
-    <Avatar style={{ border: "0px", height: "50px", width: "50px"}} variant="square" src={cyborg2} />
-    <Avatar style={{ border: "0px", height: "50px", width: "50px"}} variant="square" src={cyborg3} />
-    <Avatar style={{ border: "0px", height: "50px", width: "50px"}} variant="square" src={cyborg4} />
-    <Avatar style={{ border: "0px", height: "50px", width: "50px"}} variant="square" src={cyborg5} />
-    <Avatar style={{ border: "0px", height: "50px", width: "50px"}} variant="square" src={cyborg6} />
-    <Avatar style={{ border: "0px", height: "50px", width: "50px"}} variant="square" src={cyborg7} />
+    { attribute: 'Cyborg', number: 100, example: <Avatar style={{ border: "0px", height: "48px", width: "48px"}} variant="square" src={cyborg1} />, examples: <AvatarGroup max={6} spacing={0}>
+    <Avatar style={{ border: "0px", height: "48px", width: "48px"}} variant="square" src={cyborg2} />
+    <Avatar style={{ border: "0px", height: "48px", width: "48px"}} variant="square" src={cyborg3} />
+    <Avatar style={{ border: "0px", height: "48px", width: "48px"}} variant="square" src={cyborg4} />
+    <Avatar style={{ border: "0px", height: "48px", width: "48px"}} variant="square" src={cyborg5} />
+    <Avatar style={{ border: "0px", height: "48px", width: "48px"}} variant="square" src={cyborg6} />
+    <Avatar style={{ border: "0px", height: "48px", width: "48px"}} variant="square" src={cyborg7} />
   </AvatarGroup> }
 ];
 
