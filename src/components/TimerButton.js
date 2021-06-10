@@ -37,7 +37,7 @@ function TimerButton() {
     let interval = useRef();
 
     const startTimer = () => {
-        const countdownDate = new Date('Jun 16, 2021 18:00:00').getTime();
+        const countdownDate = new Date('Jun 17, 2021 07:07:07').getTime();
 
         interval = setInterval(() => {
             const now = new Date().getTime();

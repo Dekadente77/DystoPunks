@@ -8,3 +8,8 @@ body {
   font-size: calc(12px + 3vmin);
   line-height: calc(12px + 2vmin);
 }
+
+a {
+  color: #27d3cb;
+  text-decoration: none;
+}

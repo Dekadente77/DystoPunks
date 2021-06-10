@@ -7,6 +7,7 @@ import reportWebVitals from './reportWebVitals';
 import TimerButton from './components/TimerButton';
 import DystoTable from './components/DystoTable'
 import DystoTraits from './components/DystoTraits'
+import Text from './components/Text';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -14,6 +15,7 @@ ReactDOM.render(
     <TimerButton />
     <DystoTable />
     <DystoTraits />
+    <Text />
   </React.StrictMode>,
   document.getElementById('root')
 );
