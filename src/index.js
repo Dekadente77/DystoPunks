@@ -8,6 +8,7 @@ import TimerButton from './components/TimerButton';
 import DystoTable from './components/DystoTable'
 import DystoTraits from './components/DystoTraits'
 import Text from './components/Text';
+import Footer from './components/Footer';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -16,6 +17,7 @@ ReactDOM.render(
     <DystoTable />
     <DystoTraits />
     <Text />
+    <Footer />
   </React.StrictMode>,
   document.getElementById('root')
 );

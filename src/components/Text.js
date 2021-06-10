@@ -9,7 +9,7 @@ function Text() {
         <p><br/>
         <b>DystopianPunks V2</b> are a mix between generative and handmade <b>NFTs</b>. They are the continuation and total improvement of the <a href="https://opensea.io/collection/dystopianpunks" target="_blank" rel="noopener noreferrer"><b>DystopianPunks V1</b></a>, designed to build a <b>Punkverse</b>.
         <br/><br/> 
-        <b>V1</b> holders will receive an exclusive airdrop of the 100 <b style={{color: '#E54286'}}>Animated Cyborgs</b>, in other words if you have a <b>V1</b> you will receive your <b>Punks</b> turned into cyborgs completely free even without paying gas fees. 
+        <b>V1</b> holders will receive an exclusive <b style={{color: '#E54286'}}>Airdrop</b> of the 100 <b style={{color: '#E54286'}}>Animated Cyborgs</b>, in other words if you have a <b>V1</b> you will receive your <b>Punks</b> turned into cyborgs completely free even without paying gas fees. 
         <br/><br/>
         <h2>Claim free Punks</h2>
         Apart from the airdrop, <a href="https://opensea.io/collection/dystopianpunks" target="_blank" rel="noopener noreferrer"><b>V1</b></a> and <a href="https://opensea.io/collection/3d-dystopianpunks" target="_blank" rel="noopener noreferrer"><b>3D DystopianPunks</b></a> holders will be able to claim the same amount of <b>Punks</b> that they own completely free only by paying the gas fees, the snapshot will be on <b>June 17 at 07:07</b>.  
