@@ -8,7 +8,7 @@ function Footer() {
     <div className="Text">
         <p>
         <h2>Difference of DystoPunks V2</h2>
-        <a href="https://opensea.io/collection/dystopianpunks" target="_blank" rel="noopener noreferrer"><b>DystoPunks V1</b></a> was one of the first <a href="https://unofficialpunks.com/" target="_blank" rel="noopener noreferrer"><b>UnofficialPunks</b></a>, they are a 100% handmade experimental project, which turned out to be a success, only 100 exist and yet there is a great community around them.    
+        <a href="https://opensea.io/collection/dystopianpunks" target="_blank" rel="noopener noreferrer"><b>DystoPunks V1</b></a> was one of the first certified <a href="https://unofficialpunks.com/" target="_blank" rel="noopener noreferrer"><b>UnofficialPunks</b></a>, they are a 100% handmade experimental project, which turned out to be a success, only 100 exist and yet there is a great community around them.    
         <br/><br/> 
         <b style={{color: '#E54286'}}>DystoPunks V2</b> were created for various reasons; To take dystopians to the next level and generate further growth of the dysto community, enhance the rarity system with many improved and better distributed futuristic tech accessories, develop a <b>Punkverse</b> where the community can interact through their <b>Punks</b>, and of course reward all those who have supported the project since the beginning.  
         <br/><br/> 
