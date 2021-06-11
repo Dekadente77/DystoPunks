@@ -1,70 +1,49 @@
-# Getting Started with Create React App
+# DystopianPunks V2
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to a tech-filled dystopian future where only **2077 Punks** survived.
 
-## Available Scripts
+**DystopianPunks V2** are a mix between generative and handmade **NFTs**. They are the continuation and total improvement of the **[DystopianPunks V1](https://opensea.io/collection/dystopianpunks)**, designed to build a **Punkverse**.
 
-In the project directory, you can run:
+**V1** holders will receive an exclusive **Airdrop** of the 100 **Animated Cyborgs**, in other words if you have a **V1** you will receive your **Punks** turned into cyborgs completely free even without paying gas fees.
 
-### `npm start`
+## Claim free Punks
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Apart from the airdrop, **[V1](https://opensea.io/collection/dystopianpunks)** and **[3D DystopianPunks](https://opensea.io/collection/3d-dystopianpunks)** holders will be able to claim the same amount of **Punks** that they own completely free only by paying the gas fees, the snapshot will be on **June 17 at 07:07**.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## DystoFactory Upgrade
 
-### `npm test`
+In addition to the airdrop and free **Punks** to claim, if you have a **[V1](https://opensea.io/collection/dystopianpunks)** and an **[OG CryptoPunk](https://larvalabs.com/cryptopunks)** you will be able to access the DystoFactory Upgrade where you can dystopianize your **CryptoPunk** adapting it to the future with a facial insert and tech, completely free without paying gas, you just have to contact me by **[Discord](https://discord.com/invite/RMPkyYzZga)** or **[Twitter](https://twitter.com/DystopianPunks)** to list you.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Launch prices
 
-### `npm run build`
+- #0001 - #0100 = **Airdrop** for **V1** holders
+- #0101 - #0130 = **Reserved** for DystoFactory Upgrade and Giveaways
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- #0131 - #0500 = **0.02 ETH**
+- #0501 - #1000 = **0.03 ETH**
+- #1001 - #1333 = **0.04 ETH**
+- #1334 - #1666 = **0.06 ETH**
+- #1667 - #1999 = **0.08 ETH**
+- #2000 - #2077 = **0.10 ETH**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Dystopian Roadmap
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Draw all the pixelart and accessories `Done`
+- Develop the generative NFTs script `Done`
+- Develop the Solidity smart contract `Done`
+- Develop the frontend with React/Web3 `Done`
+- Organize and verify all IPFS metadata `Doing`
+- **Launch/Airdrop** of the **DystoPunks V2** `To Do`
+- Upgrade the Discord/Twitter DystoBot `To Do`
+- Launch a big update for the website `To Do`
+- Develop the **Punkverse/Dystoverse** `To Do`
 
-### `npm run eject`
+## Difference of DystoPunks V2
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+**[DystoPunks V1](https://opensea.io/collection/dystopianpunks)** was one of the first **[Unofficial Punks](https://unofficialpunks.com)**, they are a 100% handmade experimental project, which turned out to be a success, only 100 exist and yet there is a great community around them.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**DystoPunks V2** were created for various reasons; To take dystopians to the next level and generate further growth of the dysto community, enhance the rarity system with many improved and better distributed futuristic tech accessories, develop a **Punkverse** where the community can interact through their **Punks**, and of course reward all those who have supported the project since the beginning.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+**V2** are similar to **V1** as they maintain the same **Cyberpunk** concept and the same color palette but several accessories have been added and improved **(52 traits)** as well as a new **Punk Type: Robots**, however the **V1** will maintain unique aspects that will not exist in **V2** such as certain combinations, colorful beards and some traits.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project pays homage to the original **CryptoPunks** and is not affiliated with **Larva Labs**.

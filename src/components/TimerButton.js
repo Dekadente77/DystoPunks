@@ -29,7 +29,7 @@ const useStyles = makeStyles({
 
 function TimerButton() {
     const TimerClass = useStyles();
-    const [timerDays, setTimerDays] = useState('0');
+    const [timerDays, setTimerDays] = useState('00');
     const [timerHours, setTimerHours] = useState('00');
     const [timerMinutes, setTimerMinutes] = useState('00');
     const [timerSeconds, setTimerSeconds] = useState('00');
@@ -37,7 +37,7 @@ function TimerButton() {
     let interval = useRef();
 
     const startTimer = () => {
-        const countdownDate = new Date('Jun 17, 2021 07:07:07').getTime();
+        const countdownDate = new Date('Jun 18, 2021 19:07:07').getTime();
 
         interval = setInterval(() => {
             const now = new Date().getTime();

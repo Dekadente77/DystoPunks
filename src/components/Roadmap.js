@@ -17,7 +17,7 @@ function Roadmap() {
           <li>Develop the generative NFTs script <img src={done} className="Kanban" alt="Done"/></li>
           <li>Develop the Solidity smart contract <img src={done} className="Kanban" alt="Done"/></li>
           <li>Develop the frontend with React/Web3 <img src={done} className="Kanban" alt="Done"/></li>
-          <li>Organize and verify all metadata files <img src={doing} className="Kanban" alt="Doing"/></li>
+          <li>Organize and verify all IPFS metadata <img src={doing} className="Kanban" alt="Doing"/></li>
           <li><b>Launch/Airdrop</b> of the <b style={{color: '#E54286'}}>DystoPunks V2</b> <img src={todo} className="Kanban" alt="To Do"/></li>
           <li>Upgrade the Discord/Twitter DystoBot <img src={todo} className="Kanban" alt="To Do"/></li>
           <li>Launch a big update for the website <img src={todo} className="Kanban" alt="To Do"/></li>
