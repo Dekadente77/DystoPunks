@@ -18,7 +18,6 @@ In addition to the airdrop and free **Punks** to claim, if you have a **[V1](htt
 
 - #0001 - #0100 = **Airdrop** for **V1** holders
 - #0101 - #0130 = **Reserved** for DystoFactory Upgrade and Giveaways
-
 - #0131 - #0500 = **0.02 ETH**
 - #0501 - #1000 = **0.03 ETH**
 - #1001 - #1333 = **0.04 ETH**

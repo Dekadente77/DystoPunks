@@ -1,5 +1,5 @@
 import '../styles/DystoTable.css';
-import {TableContainer, Table, TableHead, TableBody, TableRow, TableCell} from '@material-ui/core';
+import {TableContainer, Table, TableHead, TableBody, TableRow, TableCell, Link} from '@material-ui/core';
 import {makeStyles} from '@material-ui/core/styles';
 import {Avatar} from '@material-ui/core';
 import {AvatarGroup} from '@material-ui/lab';
@@ -74,45 +74,45 @@ const useStyles = makeStyles({
 })
 
 const data= [
-    { attribute: 'Alien', number: 7, example: <Avatar style={{ border: "0px", height: "48px", width: "48px"}} variant="square" src={alien1} />, examples: <AvatarGroup max={6} spacing={0}>
-    <Avatar style={{ border: "0px", height: "48px", width: "48px"}} variant="square" src={alien2} />
-    <Avatar style={{ border: "0px", height: "48px", width: "48px"}} variant="square" src={alien3} />
-    <Avatar style={{ border: "0px", height: "48px", width: "48px"}} variant="square" src={alien4} />
-    <Avatar style={{ border: "0px", height: "48px", width: "48px"}} variant="square" src={alien5} />
-    <Avatar style={{ border: "0px", height: "48px", width: "48px"}} variant="square" src={alien6} />
-    <Avatar style={{ border: "0px", height: "48px", width: "48px"}} variant="square" src={alien7} />
+    { attribute: 'Alien', number: 7, example: <Link href={alien1} target="_blank" rel="noopener noreferrer" style={{ border: "0px"}}><Avatar style={{ height: "48px", width: "48px"}} variant="square" src={alien1} /></Link>, examples: <AvatarGroup max={6} spacing={0}>
+    <Link href={alien2} target="_blank" rel="noopener noreferrer" style={{ border: "0px"}}><Avatar style={{ height: "48px", width: "48px"}} variant="square" src={alien2} /></Link>
+    <Link href={alien3} target="_blank" rel="noopener noreferrer" style={{ border: "0px"}}><Avatar style={{ height: "48px", width: "48px"}} variant="square" src={alien3} /></Link>
+    <Link href={alien4} target="_blank" rel="noopener noreferrer" style={{ border: "0px"}}><Avatar style={{ height: "48px", width: "48px"}} variant="square" src={alien4} /></Link>
+    <Link href={alien5} target="_blank" rel="noopener noreferrer" style={{ border: "0px"}}><Avatar style={{ height: "48px", width: "48px"}} variant="square" src={alien5} /></Link>
+    <Link href={alien6} target="_blank" rel="noopener noreferrer" style={{ border: "0px"}}><Avatar style={{ height: "48px", width: "48px"}} variant="square" src={alien6} /></Link>
+    <Link href={alien7} target="_blank" rel="noopener noreferrer" style={{ border: "0px"}}><Avatar style={{ height: "48px", width: "48px"}} variant="square" src={alien7} /></Link>
   </AvatarGroup> },
-    { attribute: 'Ape', number: 20, example: <Avatar style={{ border: "0px", height: "48px", width: "48px"}} variant="square" src={ape1} />, examples: <AvatarGroup max={6} spacing={0}>
-    <Avatar style={{ border: "0px", height: "48px", width: "48px"}} variant="square" src={ape2} />
-    <Avatar style={{ border: "0px", height: "48px", width: "48px"}} variant="square" src={ape3} />
-    <Avatar style={{ border: "0px", height: "48px", width: "48px"}} variant="square" src={ape4} />
-    <Avatar style={{ border: "0px", height: "48px", width: "48px"}} variant="square" src={ape5} />
-    <Avatar style={{ border: "0px", height: "48px", width: "48px"}} variant="square" src={ape6} />
-    <Avatar style={{ border: "0px", height: "48px", width: "48px"}} variant="square" src={ape7} />
+    { attribute: 'Ape', number: 20, example: <Link href={ape1} target="_blank" rel="noopener noreferrer" style={{ border: "0px"}}><Avatar style={{ height: "48px", width: "48px"}} variant="square" src={ape1} /></Link>, examples: <AvatarGroup max={6} spacing={0}>
+    <Link href={ape2} target="_blank" rel="noopener noreferrer" style={{ border: "0px"}}><Avatar style={{ height: "48px", width: "48px"}} variant="square" src={ape2} /></Link>
+    <Link href={ape3} target="_blank" rel="noopener noreferrer" style={{ border: "0px"}}><Avatar style={{ height: "48px", width: "48px"}} variant="square" src={ape3} /></Link>
+    <Link href={ape4} target="_blank" rel="noopener noreferrer" style={{ border: "0px"}}><Avatar style={{ height: "48px", width: "48px"}} variant="square" src={ape4} /></Link>
+    <Link href={ape5} target="_blank" rel="noopener noreferrer" style={{ border: "0px"}}><Avatar style={{ height: "48px", width: "48px"}} variant="square" src={ape5} /></Link>
+    <Link href={ape6} target="_blank" rel="noopener noreferrer" style={{ border: "0px"}}><Avatar style={{ height: "48px", width: "48px"}} variant="square" src={ape6} /></Link>
+    <Link href={ape7} target="_blank" rel="noopener noreferrer" style={{ border: "0px"}}><Avatar style={{ height: "48px", width: "48px"}} variant="square" src={ape7} /></Link>
   </AvatarGroup> },
-    { attribute: 'Robot', number: 50, example: <Avatar style={{ border: "0px", height: "48px", width: "48px"}} variant="square" src={robot1} />, examples: <AvatarGroup max={6} spacing={0}>
-    <Avatar style={{ border: "0px", height: "48px", width: "48px"}} variant="square" src={robot2} />
-    <Avatar style={{ border: "0px", height: "48px", width: "48px"}} variant="square" src={robot3} />
-    <Avatar style={{ border: "0px", height: "48px", width: "48px"}} variant="square" src={robot4} />
-    <Avatar style={{ border: "0px", height: "48px", width: "48px"}} variant="square" src={robot5} />
-    <Avatar style={{ border: "0px", height: "48px", width: "48px"}} variant="square" src={robot6} />
-    <Avatar style={{ border: "0px", height: "48px", width: "48px"}} variant="square" src={robot7} />
+    { attribute: 'Robot', number: 50, example: <Link href={robot1} target="_blank" rel="noopener noreferrer" style={{ border: "0px"}}><Avatar style={{ height: "48px", width: "48px"}} variant="square" src={robot1} /></Link>, examples: <AvatarGroup max={6} spacing={0}>
+    <Link href={robot2} target="_blank" rel="noopener noreferrer" style={{ border: "0px"}}><Avatar style={{ height: "48px", width: "48px"}} variant="square" src={robot2} /></Link>
+    <Link href={robot3} target="_blank" rel="noopener noreferrer" style={{ border: "0px"}}><Avatar style={{ height: "48px", width: "48px"}} variant="square" src={robot3} /></Link>
+    <Link href={robot4} target="_blank" rel="noopener noreferrer" style={{ border: "0px"}}><Avatar style={{ height: "48px", width: "48px"}} variant="square" src={robot4} /></Link>
+    <Link href={robot5} target="_blank" rel="noopener noreferrer" style={{ border: "0px"}}><Avatar style={{ height: "48px", width: "48px"}} variant="square" src={robot5} /></Link>
+    <Link href={robot6} target="_blank" rel="noopener noreferrer" style={{ border: "0px"}}><Avatar style={{ height: "48px", width: "48px"}} variant="square" src={robot6} /></Link>
+    <Link href={robot7} target="_blank" rel="noopener noreferrer" style={{ border: "0px"}}><Avatar style={{ height: "48px", width: "48px"}} variant="square" src={robot7} /></Link>
   </AvatarGroup> },
-    { attribute: 'Female', number: 800, example: <Avatar style={{ border: "0px", height: "48px", width: "48px"}} variant="square" src={female1} />, examples: <AvatarGroup max={6} spacing={0}>
-    <Avatar style={{ border: "0px", height: "48px", width: "48px"}} variant="square" src={female2} />
-    <Avatar style={{ border: "0px", height: "48px", width: "48px"}} variant="square" src={female3} />
-    <Avatar style={{ border: "0px", height: "48px", width: "48px"}} variant="square" src={female4} />
-    <Avatar style={{ border: "0px", height: "48px", width: "48px"}} variant="square" src={female5} />
-    <Avatar style={{ border: "0px", height: "48px", width: "48px"}} variant="square" src={female6} />
-    <Avatar style={{ border: "0px", height: "48px", width: "48px"}} variant="square" src={female7} />
+    { attribute: 'Female', number: 800, example: <Link href={female1} target="_blank" rel="noopener noreferrer" style={{ border: "0px"}}><Avatar style={{ height: "48px", width: "48px"}} variant="square" src={female1} /></Link>, examples: <AvatarGroup max={6} spacing={0}>
+    <Link href={female2} target="_blank" rel="noopener noreferrer" style={{ border: "0px"}}><Avatar style={{ height: "48px", width: "48px"}} variant="square" src={female2} /></Link>
+    <Link href={female3} target="_blank" rel="noopener noreferrer" style={{ border: "0px"}}><Avatar style={{ height: "48px", width: "48px"}} variant="square" src={female3} /></Link>
+    <Link href={female4} target="_blank" rel="noopener noreferrer" style={{ border: "0px"}}><Avatar style={{ height: "48px", width: "48px"}} variant="square" src={female4} /></Link>
+    <Link href={female5} target="_blank" rel="noopener noreferrer" style={{ border: "0px"}}><Avatar style={{ height: "48px", width: "48px"}} variant="square" src={female5} /></Link>
+    <Link href={female6} target="_blank" rel="noopener noreferrer" style={{ border: "0px"}}><Avatar style={{ height: "48px", width: "48px"}} variant="square" src={female6} /></Link>
+    <Link href={female7} target="_blank" rel="noopener noreferrer" style={{ border: "0px"}}><Avatar style={{ height: "48px", width: "48px"}} variant="square" src={female7} /></Link>
   </AvatarGroup> },
-    { attribute: 'Male', number: 1200, example: <Avatar style={{ border: "0px", height: "48px", width: "48px"}} variant="square" src={male1} />, examples: <AvatarGroup max={6} spacing={0}>
-    <Avatar style={{ border: "0px", height: "48px", width: "48px"}} variant="square" src={male2} />
-    <Avatar style={{ border: "0px", height: "48px", width: "48px"}} variant="square" src={male3} />
-    <Avatar style={{ border: "0px", height: "48px", width: "48px"}} variant="square" src={male4} />
-    <Avatar style={{ border: "0px", height: "48px", width: "48px"}} variant="square" src={male5} />
-    <Avatar style={{ border: "0px", height: "48px", width: "48px"}} variant="square" src={male6} />
-    <Avatar style={{ border: "0px", height: "48px", width: "48px"}} variant="square" src={male7} />
+    { attribute: 'Male', number: 1200, example: <Link href={male1} target="_blank" rel="noopener noreferrer" style={{ border: "0px"}}><Avatar style={{ height: "48px", width: "48px"}} variant="square" src={male1} /></Link>, examples: <AvatarGroup max={6} spacing={0}>
+    <Link href={male2} target="_blank" rel="noopener noreferrer" style={{ border: "0px"}}><Avatar style={{ height: "48px", width: "48px"}} variant="square" src={male2} /></Link>
+    <Link href={male3} target="_blank" rel="noopener noreferrer" style={{ border: "0px"}}><Avatar style={{ height: "48px", width: "48px"}} variant="square" src={male3} /></Link>
+    <Link href={male4} target="_blank" rel="noopener noreferrer" style={{ border: "0px"}}><Avatar style={{ height: "48px", width: "48px"}} variant="square" src={male4} /></Link>
+    <Link href={male5} target="_blank" rel="noopener noreferrer" style={{ border: "0px"}}><Avatar style={{ height: "48px", width: "48px"}} variant="square" src={male5} /></Link>
+    <Link href={male6} target="_blank" rel="noopener noreferrer" style={{ border: "0px"}}><Avatar style={{ height: "48px", width: "48px"}} variant="square" src={male6} /></Link>
+    <Link href={male7} target="_blank" rel="noopener noreferrer" style={{ border: "0px"}}><Avatar style={{ height: "48px", width: "48px"}} variant="square" src={male7} /></Link>
   </AvatarGroup> }
 ];
 

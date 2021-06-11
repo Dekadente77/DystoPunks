@@ -1,5 +1,5 @@
 import '../styles/DystoTable.css';
-import {TableContainer, Table, TableHead, TableBody, TableRow, TableCell} from '@material-ui/core';
+import {TableContainer, Table, TableHead, TableBody, TableRow, TableCell, Link} from '@material-ui/core';
 import {makeStyles} from '@material-ui/core/styles';
 import {Avatar} from '@material-ui/core';
 import {AvatarGroup} from '@material-ui/lab';
@@ -38,13 +38,13 @@ const useStyles = makeStyles({
 })
 
 const data= [
-    { attribute: 'Cyborg', number: 100, example: <Avatar style={{ border: "0px", height: "48px", width: "48px"}} variant="square" src={cyborg1} />, examples: <AvatarGroup max={6} spacing={0}>
-    <Avatar style={{ border: "0px", height: "48px", width: "48px"}} variant="square" src={cyborg2} />
-    <Avatar style={{ border: "0px", height: "48px", width: "48px"}} variant="square" src={cyborg3} />
-    <Avatar style={{ border: "0px", height: "48px", width: "48px"}} variant="square" src={cyborg4} />
-    <Avatar style={{ border: "0px", height: "48px", width: "48px"}} variant="square" src={cyborg5} />
-    <Avatar style={{ border: "0px", height: "48px", width: "48px"}} variant="square" src={cyborg6} />
-    <Avatar style={{ border: "0px", height: "48px", width: "48px"}} variant="square" src={cyborg7} />
+    { attribute: 'Cyborg', number: 100, example: <Link href={cyborg1} target="_blank" rel="noopener noreferrer" style={{ border: "0px"}}><Avatar style={{ height: "48px", width: "48px"}} variant="square" src={cyborg1} /></Link>, examples: <AvatarGroup max={6} spacing={0}>
+    <Link href={cyborg2} target="_blank" rel="noopener noreferrer" style={{ border: "0px"}}><Avatar style={{ height: "48px", width: "48px"}} variant="square" src={cyborg2} /></Link>
+    <Link href={cyborg3} target="_blank" rel="noopener noreferrer" style={{ border: "0px"}}><Avatar style={{ height: "48px", width: "48px"}} variant="square" src={cyborg3} /></Link>
+    <Link href={cyborg4} target="_blank" rel="noopener noreferrer" style={{ border: "0px"}}><Avatar style={{ height: "48px", width: "48px"}} variant="square" src={cyborg4} /></Link>
+    <Link href={cyborg5} target="_blank" rel="noopener noreferrer" style={{ border: "0px"}}><Avatar style={{ height: "48px", width: "48px"}} variant="square" src={cyborg5} /></Link>
+    <Link href={cyborg6} target="_blank" rel="noopener noreferrer" style={{ border: "0px"}}><Avatar style={{ height: "48px", width: "48px"}} variant="square" src={cyborg6} /></Link>
+    <Link href={cyborg7} target="_blank" rel="noopener noreferrer" style={{ border: "0px"}}><Avatar style={{ height: "48px", width: "48px"}} variant="square" src={cyborg7} /></Link>
   </AvatarGroup> }
 ];
 
