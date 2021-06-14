@@ -1,10 +1,22 @@
 import React from "react"
 import '../styles/Metamask.css'
 import {Fab} from '@material-ui/core';
-import {makeStyles} from '@material-ui/core';
 import detectEthereumProvider from '@metamask/detect-provider';
 
+const style = {
+  backgroundColor: '#8CFF9B',
+  color: '#12173D',
+  fontSize: 'calc(12px + 2vmin)',
+  fontFamily: 'm5x7',
+  boxShadow: 'none',
+  borderRadius: '0px',
 
+  '&:hover': {
+      backgroundColor: '#8CFF9B',
+      color: '#ffffff',
+      boxShadow: 'none',
+  }
+}; 
 
 class Metamask extends React.Component {
   constructor(props) {
@@ -116,11 +128,11 @@ class Metamask extends React.Component {
         <div className="sticky-cta">
            <div className='metamask'>
                {this.state.currentAccount ? (
-                       <Fab variant="extended">
+                       <Fab style={style} variant="extended">
                              <b>{this.state.currentAccount.substring(0, 6)}...{this.state.currentAccount.substring(this.state.currentAccount.length -4)}</b>
                        </Fab>
                  ) :
-                       <Fab variant="extended" onClick={() => this.connect()}>
+                       <Fab style={style} variant="extended" onClick={() => this.connect()}>
                            <b>Connect metamask</b>
                        </Fab>
 
