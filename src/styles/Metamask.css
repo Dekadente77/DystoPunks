@@ -1,6 +1,7 @@
 .metamask {
   right: calc(20px + 2vmin);
   position: fixed;
+  top: 0;
 }
 
 .metabutton {
