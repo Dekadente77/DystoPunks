@@ -6,7 +6,7 @@ import detectEthereumProvider from '@metamask/detect-provider';
 const Web3 = require('web3');
 
 // TEST
- const OPENSEA_WEB = "https://testnets.opensea.io/assets/0x677b29ED6C4Fad2FCF8C043fe4827AbE80DD75B0/";
+// const OPENSEA_WEB = "https://testnets.opensea.io/assets/0x677b29ED6C4Fad2FCF8C043fe4827AbE80DD75B0/";
  const NFT_CONTRACT_ADDRESS = "0x677b29ED6C4Fad2FCF8C043fe4827AbE80DD75B0"; //test
 
 // MAINNET
@@ -777,7 +777,7 @@ class ClaimButtons extends React.Component {
     // If the array of accounts is non-empty, you're already
     // connected.
     this.ethereum.on('accountsChanged', () => this.handleAccountsChanged);
-    this.updateInitialStates();
+    
 
   }
 
@@ -790,12 +790,13 @@ class ClaimButtons extends React.Component {
       this.setState({
         currentAccount: accounts[0],
       });
+      this.updateInitialStates();
     }
 
   }
 
   connect = () => {
-    console.log(this.ethereum);
+    //console.log(this.ethereum);
     if (this.ethereum === null) {
       alert("no wallet");
       return;
@@ -812,6 +813,7 @@ class ClaimButtons extends React.Component {
         // EIP-1193 userRejectedRequest error
         // If this happens, the user rejected the connection request.
         console.log('Please connect to MetaMask.');
+        
       } else {
         console.error(err);
       }
@@ -827,6 +829,7 @@ class ClaimButtons extends React.Component {
 
     if (account === null) {
       console.log('no account detected');
+      this.connect();
       return;
     }
     numPurchase=parseInt(numPurchase);
@@ -909,7 +912,7 @@ class ClaimButtons extends React.Component {
   }
 
 
-  updateInitialStates = () => {
+  updateInitialStates = () => { 
     this.updateTotalSupply();
     this.updateHasSaleStarted();
     this.updateUnitPrice();
@@ -983,7 +986,7 @@ class ClaimButtons extends React.Component {
         </div>
         <div className="App">
           <form noValidate autoComplete="off">
-              <p>{this.state.statusString}</p>
+              <p>{this.state.statusString} </p>
               {this.state.isAuthClaim > 0 &&
               
                  <Button style={styleClaim} variant="contained" size="large" onClick={() => this.handleClaim()}><b>Claim Free Punks</b></Button>
