@@ -3,7 +3,6 @@ import '../styles/Global.css';
 import '../styles/Metamask.css'
 import {Button, TextField, Fab} from '@material-ui/core';
 import detectEthereumProvider from '@metamask/detect-provider';
-//import {buyPunk} from "../scripts/newPunk.js"
 const Web3 = require('web3');
 
 // TEST
@@ -655,6 +654,7 @@ const styleClaim = {
     fontFamily: 'm5x7',
     boxShadow: 'none',
     borderRadius: '0px',
+    margin: '0 10px 0 0',
   
     '&:hover': {
         backgroundColor: '#27D3CB',
@@ -699,7 +699,7 @@ class ClaimButtons extends React.Component {
       ownedPunks: [],
       statusString: null,
       defaultValue: 1,
-      isAuthClaim: false,
+      isAuthClaim: 0,
     }
     this.textInput = {value: 1};
     this.updateInput = this.updateInput.bind(this);
@@ -914,6 +914,7 @@ class ClaimButtons extends React.Component {
     this.updateHasSaleStarted();
     this.updateUnitPrice();
     this.updateOwnedPunks();
+    this.updateIsAuthClaim();
   }
 
   updateTotalSupply = () => {
@@ -929,6 +930,14 @@ class ClaimButtons extends React.Component {
     this.nftContract.methods.hasSaleStarted().call().then((hasSaleStarted) => {
       this.setState({
         hasSaleStarted: hasSaleStarted
+      });
+    });
+  }
+
+  updateIsAuthClaim = () => {
+    this.nftContract.methods.isAuthClaim(this.state.currentAccount).call().then((isAuthClaim) => {
+      this.setState({
+        isAuthClaim: isAuthClaim
       });
     });
   }
@@ -960,7 +969,7 @@ class ClaimButtons extends React.Component {
       <div>
         <div className="sticky-cta">
            <div className='metamask'>
-               {this.state.currentAccount ? (
+               {this.state.isAuthClaim ? (
                        <Fab style={style} variant="extended">
                              <b>{this.state.currentAccount.substring(0, 6)}...{this.state.currentAccount.substring(this.state.currentAccount.length -4)}</b>
                        </Fab>
@@ -975,7 +984,11 @@ class ClaimButtons extends React.Component {
         <div className="App">
           <form noValidate autoComplete="off">
               <p>{this.state.statusString}</p>
-              <Button style={styleClaim} variant="contained" size="large" onClick={() => this.handleClaim()}><b>Claim Free Punks</b></Button>&nbsp;
+              {this.state.isAuthClaim > 0 &&
+              
+                 <Button style={styleClaim} variant="contained" size="large" onClick={() => this.handleClaim()}><b>Claim Free Punks</b></Button>
+  
+              }
               <Button style={styleBuy} variant="contained" size="large" onClick={() => this.handleClick()}><b>Buy DystoPunks</b></Button>&nbsp;
               <TextField style={{maxWidth: "100px"}} label="MAX 20" variant="filled" onChange={this.updateInput} defaultValue={this.state.defaultValue}  margin="dense" size="small" requiered="true" type="number" inputProps={inputProps}/>
               <p style={{marginBottom: "20px"}}><b style={{color: '#E54286'}}>{this.state.totalSupply}/2077</b> SOLD | Current Price: <b style={{color: '#E54286'}}>{this.state.unitPrice}</b> <b>ETH</b></p>
