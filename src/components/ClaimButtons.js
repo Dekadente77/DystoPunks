@@ -6,12 +6,12 @@ import detectEthereumProvider from '@metamask/detect-provider';
 const Web3 = require('web3');
 
 // TEST
-// const OPENSEA_WEB = "https://testnets.opensea.io/assets/0x677b29ED6C4Fad2FCF8C043fe4827AbE80DD75B0/";
- const NFT_CONTRACT_ADDRESS = "0x677b29ED6C4Fad2FCF8C043fe4827AbE80DD75B0"; //test
+// const OPENSEA_WEB = "https://testnets.opensea.io/assets/0x1Cc58F8F435704F93BC5eBe76d393D322D63321b/";
+ const NFT_CONTRACT_ADDRESS = "0x1Cc58F8F435704F93BC5eBe76d393D322D63321b"; //test
 
 // MAINNET
-//const OPENSEA_WEB = "https://opensea.io/assets/0x677b29ED6C4Fad2FCF8C043fe4827AbE80DD75B0/";
-//const NFT_CONTRACT_ADDRESS = "0x677b29ED6C4Fad2FCF8C043fe4827AbE80DD75B0";
+//const OPENSEA_WEB = "https://opensea.io/assets/0x1Cc58F8F435704F93BC5eBe76d393D322D63321b/";
+//const NFT_CONTRACT_ADDRESS = "0x1Cc58F8F435704F93BC5eBe76d393D322D63321b";
 
 const NFT_ABI =[
 	{
@@ -207,7 +207,7 @@ const NFT_ABI =[
 	},
 	{
 		"inputs": [],
-		"name": "claimTestPunk",
+		"name": "claimDystoPunk",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"
@@ -248,11 +248,11 @@ const NFT_ABI =[
 		"inputs": [
 			{
 				"internalType": "uint256",
-				"name": "numTestPunks",
+				"name": "numDystoPunks",
 				"type": "uint256"
 			}
 		],
-		"name": "getTestPunk",
+		"name": "getDystoPunk",
 		"outputs": [],
 		"stateMutability": "payable",
 		"type": "function"
@@ -376,11 +376,11 @@ const NFT_ABI =[
 		"inputs": [
 			{
 				"internalType": "uint256",
-				"name": "numTestPunks",
+				"name": "numDystoPunks",
 				"type": "uint256"
 			}
 		],
-		"name": "reserveGiveaway",
+		"name": "reserveAirdrop",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"
@@ -842,7 +842,7 @@ class ClaimButtons extends React.Component {
     });
 
     this.nftContract.methods.calculatePrice().call().then((unitPrice) => {
-      const encodedAdoptFunction = this.nftContract.methods.getTestPunk(numPurchase).encodeABI();
+      const encodedAdoptFunction = this.nftContract.methods.getDistoPunk(numPurchase).encodeABI();
 
       const transactionOptions = {
         from: account,
@@ -885,7 +885,7 @@ class ClaimButtons extends React.Component {
     });
 
     this.nftContract.methods.calculatePrice().call().then((unitPrice) => {
-      const encodedAdoptFunction = this.nftContract.methods.claimTestPunk().encodeABI();
+      const encodedAdoptFunction = this.nftContract.methods.claimDystoPunk().encodeABI();
 
       const transactionOptions = {
         from: account,
