@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import './styles/Global.css';
-import Metamask from './components/Metamask';
 import App from './components/App';
 import reportWebVitals from './reportWebVitals';
 import ClaimButtons from './components/ClaimButtons';
@@ -14,7 +13,6 @@ import Footer from './components/Footer';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Metamask />
     <App />
     <ClaimButtons />
     <DystoTable />
