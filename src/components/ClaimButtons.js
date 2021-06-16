@@ -796,8 +796,8 @@ class ClaimButtons extends React.Component {
   }
 
   connect = () => {
-    //console.log(this.ethereum);
-    if (this.ethereum === null) {
+    console.log(this.ethereum);
+    if (this.ethereum === null || this.ethereum === undefined) {
       alert("no wallet");
       return;
     }
