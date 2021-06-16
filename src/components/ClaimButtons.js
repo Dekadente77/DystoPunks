@@ -972,7 +972,7 @@ class ClaimButtons extends React.Component {
       <div>
         <div className="sticky-cta">
            <div className='metamask'>
-               {this.state.isAuthClaim ? (
+               {this.state.currentAccount ? (
                        <Fab style={style} variant="extended">
                              <b>{this.state.currentAccount.substring(0, 6)}...{this.state.currentAccount.substring(this.state.currentAccount.length -4)}</b>
                        </Fab>
@@ -994,7 +994,12 @@ class ClaimButtons extends React.Component {
               }
               <Button style={styleBuy} variant="contained" size="large" onClick={() => this.handleClick()}><b>Buy DystoPunks</b></Button>&nbsp;
               <TextField style={{maxWidth: "100px"}} label="MAX 20" variant="filled" onChange={this.updateInput} defaultValue={this.state.defaultValue}  margin="dense" size="small" requiered="true" type="number" inputProps={inputProps}/>
-              <p style={{marginBottom: "20px"}}><b style={{color: '#E54286'}}>{this.state.totalSupply}/2077</b> SOLD | Current Price: <b style={{color: '#E54286'}}>{this.state.unitPrice}</b> <b>ETH</b></p>
+              {this.state.currentAccount > 0 &&
+              
+               <p style={{marginBottom: "20px"}}><b style={{color: '#E54286'}}>{this.state.totalSupply}/2077</b> SOLD | Current Price: <b style={{color: '#E54286'}}>{this.state.unitPrice}</b> <b>ETH</b></p>
+
+             }
+              
           </form>
         </div>
       </div>
