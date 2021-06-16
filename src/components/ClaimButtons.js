@@ -754,7 +754,7 @@ class ClaimButtons extends React.Component {
     }
 
     this.ethereum.on('chainChanged', handleChainChanged);
-
+    this.ethereum.on('accountsChanged', handleChainChanged);
     function handleChainChanged(_chainId) {
       // We recommend reloading the page, unless you must do otherwise
       window.location.reload();
