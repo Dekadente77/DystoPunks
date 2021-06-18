@@ -842,7 +842,7 @@ class ClaimButtons extends React.Component {
     });
 
     this.nftContract.methods.calculatePrice().call().then((unitPrice) => {
-      const encodedAdoptFunction = this.nftContract.methods.getDistoPunk(numPurchase).encodeABI();
+      const encodedAdoptFunction = this.nftContract.methods.getDystoPunk(numPurchase).encodeABI();
 
       const transactionOptions = {
         from: account,
@@ -985,6 +985,7 @@ class ClaimButtons extends React.Component {
              </div>
         </div>
         <div className="App">
+        {this.state.hasSaleStarted &&
           <form noValidate autoComplete="off">
               <p>{this.state.statusString} </p>
               {this.state.isAuthClaim > 0 &&
@@ -994,13 +995,14 @@ class ClaimButtons extends React.Component {
               }
               <Button style={styleBuy} variant="contained" size="large" onClick={() => this.handleClick()}><b>Buy DystoPunks</b></Button>&nbsp;
               <TextField style={{maxWidth: "100px"}} label="MAX 20" variant="filled" onChange={this.updateInput} defaultValue={this.state.defaultValue}  margin="dense" size="small" requiered="true" type="number" inputProps={inputProps}/>
-              {this.state.currentAccount > 0 &&
+              
               
                <p style={{marginBottom: "20px"}}><b style={{color: '#E54286'}}>{this.state.totalSupply}/2077</b> SOLD | Current Price: <b style={{color: '#E54286'}}>{this.state.unitPrice}</b> <b>ETH</b></p>
 
-             }
+            
               
           </form>
+        }  
         </div>
       </div>
      
