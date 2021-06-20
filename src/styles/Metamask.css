@@ -1,8 +1,5 @@
 .metamask {
   right: calc(20px + 2vmin);
   position: fixed;
-}
-
-.metabutton {
-  background-color: aqua;
+  top: 0;
 }

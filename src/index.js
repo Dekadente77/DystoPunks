@@ -2,10 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import './styles/Global.css';
-import Metamask from './components/Metamask';
 import App from './components/App';
 import reportWebVitals from './reportWebVitals';
-import TimerButton from './components/TimerButton';
+import ClaimButtons from './components/ClaimButtons';
 import DystoTable from './components/DystoTable'
 import DystoTraits from './components/DystoTraits'
 import Text from './components/Text';
@@ -14,9 +13,8 @@ import Footer from './components/Footer';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Metamask />
     <App />
-    <TimerButton />
+    <ClaimButtons />
     <DystoTable />
     <DystoTraits />
     <Text />
