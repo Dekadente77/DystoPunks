@@ -6,12 +6,12 @@ import detectEthereumProvider from '@metamask/detect-provider';
 const Web3 = require('web3');
 
 // TEST
-// const OPENSEA_WEB = "https://testnets.opensea.io/assets/0x1Cc58F8F435704F93BC5eBe76d393D322D63321b/";
- const NFT_CONTRACT_ADDRESS = "0x1Cc58F8F435704F93BC5eBe76d393D322D63321b"; //test
+// const OPENSEA_WEB = "https://testnets.opensea.io/assets/0xDA5584Cc586d07c7141aA427224A4Bd58E64aF7D/";
+ const NFT_CONTRACT_ADDRESS = "0xDA5584Cc586d07c7141aA427224A4Bd58E64aF7D"; //test
 
 // MAINNET
-//const OPENSEA_WEB = "https://opensea.io/assets/0x1Cc58F8F435704F93BC5eBe76d393D322D63321b/";
-//const NFT_CONTRACT_ADDRESS = "0x1Cc58F8F435704F93BC5eBe76d393D322D63321b";
+//const OPENSEA_WEB = "https://opensea.io/assets/0xDA5584Cc586d07c7141aA427224A4Bd58E64aF7D/";
+//const NFT_CONTRACT_ADDRESS = "0xDA5584Cc586d07c7141aA427224A4Bd58E64aF7D";
 
 const NFT_ABI =[
 	{
@@ -450,6 +450,19 @@ const NFT_ABI =[
 			}
 		],
 		"name": "setApprovalForAll",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "baseURI",
+				"type": "string"
+			}
+		],
+		"name": "setBaseURI",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"
