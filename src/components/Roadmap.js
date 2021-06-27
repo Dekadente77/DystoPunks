@@ -18,9 +18,9 @@ function Roadmap() {
           <li>Develop the Solidity smart contract <img src={done} className="Kanban" alt="Done"/></li>
           <li>Develop the frontend with React/Web3 <img src={done} className="Kanban" alt="Done"/></li>
           <li>Organize and verify all IPFS metadata <img src={done} className="Kanban" alt="Done"/></li>
-          <li><b>Launch/Airdrop</b> of the <b style={{color: '#E54286'}}>DystoPunks V2</b> <img src={doing} className="Kanban" alt="Doing"/></li>
-          <li>Upgrade the Discord/Twitter DystoBot <img src={todo} className="Kanban" alt="To Do"/></li>
-          <li>Launch a big update for the website <img src={todo} className="Kanban" alt="To Do"/></li>
+          <li><b>Launch/Airdrop</b> of the <b style={{color: '#E54286'}}>DystoPunks V2</b> <img src={done} className="Kanban" alt="Done"/></li>
+          <li>Upgrade the Discord/Twitter DystoBot <img src={doing} className="Kanban" alt="Doing"/></li>
+          <li>Launch a big update for the website <img src={doing} className="Kanban" alt="Doing"/></li>
           <li>Develop the <b>Punkverse/Dystoverse</b> <img src={todo} className="Kanban" alt="To Do"/></li>
         </ul> 
         </p>
