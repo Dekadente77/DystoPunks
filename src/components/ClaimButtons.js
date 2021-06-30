@@ -1,7 +1,9 @@
 import React from "react"
 import '../styles/Global.css';
 import '../styles/Metamask.css'
-import {Button, TextField, Fab} from '@material-ui/core';
+import {Button, TextField, Fab, Link} from '@material-ui/core';
+import {Avatar} from '@material-ui/core';
+import {AvatarGroup} from '@material-ui/lab';
 import detectEthereumProvider from '@metamask/detect-provider';
 const Web3 = require('web3');
 
@@ -10,9 +12,9 @@ const Web3 = require('web3');
  //const NFT_CONTRACT_ADDRESS = "0xbEA8123277142dE42571f1fAc045225a1D347977"; //test
 
 // MAINNET
-//const OPENSEA_WEB = "https://opensea.io/assets/0xbEA8123277142dE42571f1fAc045225a1D347977/";
+const OPENSEA_WEB = "https://opensea.io/assets/0xbea8123277142de42571f1fac045225a1d347977/";
 const NFT_CONTRACT_ADDRESS = "0xbEA8123277142dE42571f1fAc045225a1D347977";
-
+const IMAGE_URI = "https://gateway.pinata.cloud/ipfs/QmVa32AzauRmW91Us4hdRxfgUCyLVatuHwRv94zAnTbWJg/";
 const NFT_ABI =[
 	{
 		"inputs": [
@@ -972,6 +974,23 @@ class ClaimButtons extends React.Component {
         this.setState({
           ownedPunks: ownedPunks
         });
+		this.setState({
+			listItems:  ownedPunks.map((number) => {
+				let liStrig='';
+			    let tokenNumber=number-1;
+				let punkImg=number+'.png';
+                if (number>100) {
+					liStrig=<li><Link href={OPENSEA_WEB+tokenNumber} target="_blank" rel="noopener noreferrer" style={{ border: "0px"}}><Avatar style={{ height: "48px", width: "48px"}} variant="square" src={IMAGE_URI+punkImg} /></Link></li>
+				} else {
+					punkImg=number+'.gif';
+					liStrig=<li><Link href={OPENSEA_WEB+tokenNumber} target="_blank" rel="noopener noreferrer" style={{ border: "0px"}}><Avatar style={{ height: "48px", width: "48px"}} variant="square" src={IMAGE_URI+punkImg} /></Link></li>
+				}
+			   return liStrig
+			}
+		     
+			)
+	    });
+
       });
     }
   }
@@ -980,15 +999,24 @@ class ClaimButtons extends React.Component {
     this.textInput={value: evt.target.value};   
   }
 
+
   render() { 
     return (
       <div>
         <div className="sticky-cta">
            <div className='metamask'>
                {this.state.currentAccount ? (
+				       <div>
                        <Fab style={style} variant="extended">
                              <b>{this.state.currentAccount.substring(0, 6)}...{this.state.currentAccount.substring(this.state.currentAccount.length -4)}</b>
                        </Fab>
+					    <ul> 
+								{
+									this.state.listItems
+								  
+                                }
+                        </ul>
+					   </div>
                  ) :
                        <Fab style={style} variant="extended" onClick={() => this.connect()}>
                            <b>Connect metamask</b>
