@@ -980,11 +980,11 @@ class ClaimButtons extends React.Component {
 			    let tokenNumber=number-1;
 				let imgNumber=Number(number)+1;
 				let punkImg=imgNumber+'.png';
-                if (number>100) {
-					liStrig=<li><Link href={OPENSEA_WEB+number} target="_blank" rel="noopener noreferrer" style={{ border: "0px"}}><Avatar style={{ height: "48px", width: "48px"}} variant="square" src={IMAGE_URI+punkImg} /></Link></li>
+                if (number>99) {
+					liStrig=<li><Link href={OPENSEA_WEB+number} target="_blank" rel="noopener noreferrer" style={{ border: "0px"}}><Avatar style={{ height: "48px", width: "48px"}} variant="square" src={IMAGE_URI+punkImg} />#{imgNumber} </Link></li>
 				} else {
 					punkImg=imgNumber+'.gif';
-					liStrig=<li><Link href={OPENSEA_WEB+number} target="_blank" rel="noopener noreferrer" style={{ border: "0px"}}><Avatar style={{ height: "48px", width: "48px"}} variant="square" src={IMAGE_URI+punkImg} /></Link></li>
+					liStrig=<li><Link href={OPENSEA_WEB+number} target="_blank" rel="noopener noreferrer" style={{ border: "0px"}}><Avatar style={{ height: "48px", width: "48px"}} variant="square" src={IMAGE_URI+punkImg} />#{imgNumber} </Link></li>
 				}
 			   return liStrig
 			}
@@ -1011,7 +1011,7 @@ class ClaimButtons extends React.Component {
                        <Fab style={style} variant="extended">
                              <b>{this.state.currentAccount.substring(0, 6)}...{this.state.currentAccount.substring(this.state.currentAccount.length -4)}</b>
                        </Fab>
-					    <ul> 
+					    <ul className='listPunks'> 
 								{
 									this.state.listItems
 								  
