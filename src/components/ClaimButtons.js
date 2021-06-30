@@ -978,12 +978,13 @@ class ClaimButtons extends React.Component {
 			listItems:  ownedPunks.map((number) => {
 				let liStrig='';
 			    let tokenNumber=number-1;
-				let punkImg=number+'.png';
+				let imgNumber=Number(number)+1;
+				let punkImg=imgNumber+'.png';
                 if (number>100) {
-					liStrig=<li><Link href={OPENSEA_WEB+tokenNumber} target="_blank" rel="noopener noreferrer" style={{ border: "0px"}}><Avatar style={{ height: "48px", width: "48px"}} variant="square" src={IMAGE_URI+punkImg} /></Link></li>
+					liStrig=<li><Link href={OPENSEA_WEB+number} target="_blank" rel="noopener noreferrer" style={{ border: "0px"}}><Avatar style={{ height: "48px", width: "48px"}} variant="square" src={IMAGE_URI+punkImg} /></Link></li>
 				} else {
-					punkImg=number+'.gif';
-					liStrig=<li><Link href={OPENSEA_WEB+tokenNumber} target="_blank" rel="noopener noreferrer" style={{ border: "0px"}}><Avatar style={{ height: "48px", width: "48px"}} variant="square" src={IMAGE_URI+punkImg} /></Link></li>
+					punkImg=imgNumber+'.gif';
+					liStrig=<li><Link href={OPENSEA_WEB+number} target="_blank" rel="noopener noreferrer" style={{ border: "0px"}}><Avatar style={{ height: "48px", width: "48px"}} variant="square" src={IMAGE_URI+punkImg} /></Link></li>
 				}
 			   return liStrig
 			}
