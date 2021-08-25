@@ -17,11 +17,6 @@ ReactDOM.render(
     <App />
     <ClaimButtons />
     <SocialButtons />
-    <DystoTable />
-    <DystoTraits />
-    <Text />
-    <Roadmap />
-    <Footer />
   </React.StrictMode>,
   document.getElementById('root')
 );

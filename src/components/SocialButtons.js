@@ -37,8 +37,8 @@ function SocialButtons() {
   return (
     <div className="App">
         <form noValidate autoComplete="off">
-            <Button style={styleClaim} variant="contained" size="large" href="https://opensea.io/collection/dystopianpunks-v2" target="_blank" rel="noopener noreferrer"><b>Buy at OpenSea</b></Button>&nbsp;
-            <Button style={styleBuy} variant="contained" size="large" href="https://discord.gg/RMPkyYzZga" target="_blank" rel="noopener noreferrer"><b>Discord</b></Button>
+            <Button style={styleClaim} variant="contained" size="large" href="https://opensea.io/collection/dystopunks-v2" target="_blank" rel="noopener noreferrer"><b>Buy at OpenSea</b></Button>&nbsp;
+            <Button style={styleBuy} variant="contained" size="large" href="https://discord.gg/7kZvXxutTM" target="_blank" rel="noopener noreferrer"><b>Discord</b></Button>
         </form> <br/><br/>
     </div>
   );

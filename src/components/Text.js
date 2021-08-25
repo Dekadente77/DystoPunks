@@ -9,8 +9,6 @@ function Text() {
     <Container fixed style={{maxWidth: "700px"}}>
     <div className="Text">
         <p><br/>
-        <b>Randomly generated</b> and <b>web minting</b>, maximum <b>20</b> per transaction.
-        <br/><br/>
         <b>DystopianPunks V2</b> are a mix between generative and handmade <b>NFTs</b>. They are the continuation and total improvement of the <a href="https://opensea.io/collection/dystopianpunks" target="_blank" rel="noopener noreferrer"><b>DystopianPunks V1</b></a>, designed to build a <b>Punkverse</b>.
         <br/><br/> 
         <b>V1</b> holders will receive an exclusive <b style={{color: '#E54286'}}>Airdrop</b> of the 100 <b style={{color: '#E54286'}}>Animated Cyborgs</b>, in other words if you have a <b>V1</b> you will receive your <b>Punks</b> turned into cyborgs completely free even without paying gas fees. 
