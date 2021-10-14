@@ -6,10 +6,7 @@ import App from './components/App';
 import reportWebVitals from './reportWebVitals';
 import ClaimButtons from './components/ClaimButtons';
 import SocialButtons from './components/SocialButtons';
-import DystoTable from './components/DystoTable'
-import DystoTraits from './components/DystoTraits'
-import Text from './components/Text';
-import Roadmap from './components/Roadmap';
+import DystoPunks from './components/DystoPunks';
 import Footer from './components/Footer';
 
 ReactDOM.render(
@@ -17,6 +14,8 @@ ReactDOM.render(
     <App />
     <ClaimButtons />
     <SocialButtons />
+    <DystoPunks />
+    <Footer />
   </React.StrictMode>,
   document.getElementById('root')
 );

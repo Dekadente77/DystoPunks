@@ -1,6 +1,6 @@
 import React from "react"
 import '../styles/Global.css';
-import {Button} from '@material-ui/core';
+import {Button, TextField, Fab} from '@material-ui/core';
 
 const styleClaim = {
     backgroundColor: '#27D3CB',
@@ -11,14 +11,14 @@ const styleClaim = {
     borderRadius: '0px',
 
     '&:hover': {
-        backgroundColor: '#27D3CB',
+        backgroundColor: '#78FAE6',
         color: '#ffffff',
         boxShadow: 'none',
     }
   };
 
 const styleBuy = {
-    backgroundColor: '#B483EF',
+    backgroundColor: '#E54286',
     color: '#12173D',
     fontSize: 'calc(12px + 2vmin)',
     fontFamily: 'm5x7',
@@ -37,9 +37,11 @@ function SocialButtons() {
   return (
     <div className="App">
         <form noValidate autoComplete="off">
-            <Button style={styleClaim} variant="contained" size="large" href="https://opensea.io/collection/dystopunks" target="_blank" rel="noopener noreferrer"><b>Buy at OpenSea</b></Button>&nbsp;
-            <Button style={styleBuy} variant="contained" size="large" href="https://discord.gg/DystoPunks" target="_blank" rel="noopener noreferrer"><b>Discord</b></Button>
-        </form> <br/><br/>
+          
+            <Button style={styleClaim} variant="contained" size="large" href="" target="_blank" rel="noopener noreferrer"><b>Claim 300 $CREDS</b></Button>&nbsp;
+            <Button style={styleBuy} variant="contained" size="large" href="" target="_blank" rel="noopener noreferrer"><b>Mint Crates</b></Button>&nbsp;
+            <TextField style={{maxWidth: "100px"}} variant="filled" margin="dense" size="small" requiered="true" type="number"/>
+        </form>
     </div>
   );
 }
