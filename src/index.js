@@ -5,7 +5,6 @@ import './styles/Global.css';
 import App from './components/App';
 import reportWebVitals from './reportWebVitals';
 import ClaimButtons from './components/ClaimButtons';
-import SocialButtons from './components/SocialButtons';
 import DystoPunks from './components/DystoPunks';
 import Footer from './components/Footer';
 
@@ -13,7 +12,6 @@ ReactDOM.render(
   <React.StrictMode>
     <App />
     <ClaimButtons />
-    <SocialButtons />
     <Footer />
   </React.StrictMode>,
   document.getElementById('root')

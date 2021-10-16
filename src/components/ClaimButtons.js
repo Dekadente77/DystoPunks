@@ -11,8 +11,8 @@ const Web3 = require('web3');
 
 // MAINNET
 //const OPENSEA_WEB = "https://opensea.io/assets/0xbEA8123277142dE42571f1fAc045225a1D347977/";
-const NFT_CONTRACT_ADDRESS = "0xF548DD34827B26413314dA61289610FF4EBe5596";
-const CRATES_CONTRACT_ADDRESS = "0x9EfeFD8f196e072D9c1fB8fecE3f68b7d7847eB5";
+const NFT_CONTRACT_ADDRESS = "0xddbd0b578EE264918105Bb56a3bA128b70945520";
+const CRATES_CONTRACT_ADDRESS = "0x65884Fe90b6721FD6FcaA063787B25a0aAE9f237";
 const NFT_ABI =[
 	{
 		"inputs": [],
@@ -1505,17 +1505,14 @@ class ClaimButtons extends React.Component {
               {this.state.totalAllowance > 0 ? (
                   <Button style={styleBuy} variant="contained" size="large" onClick={() => this.handleClick()}><b>Mint Crates</b></Button>
                  ) :
-                  <div>
-                  <Button style={styleBuy} variant="contained" size="large" onClick={() => this.handleAprobal()}><b>Aproval</b></Button>
+                  <div><br/>
+                  <Button style={styleBuy} variant="contained" size="large" onClick={() => this.handleAprobal()}><b>Aproval for Mint </b></Button>&nbsp;
                   <Button style={styleBuy} variant="contained" size="large" onClick={() => this.handleClick()}><b>Mint Crates</b></Button>
                   </div>
               } 
               
-              <TextField style={{maxWidth: "100px"}} label="MAX 20" variant="filled" onChange={this.updateInput} defaultValue={this.state.defaultValue}  margin="dense" size="small" requiered="true" type="number" inputProps={inputProps}/>
-              
-              
-               <p style={{marginBottom: "20px"}}><b style={{color: '#E54286'}}>{this.state.totalAllowance}/2077</b> SOLD | Current Price: <b style={{color: '#E54286'}}>{this.state.unitPrice}</b> <b>ETH</b></p>
-
+              <TextField style={{maxWidth: "100px"}} inputProps={{ style: { color: "#fff" } }} variant="filled" onChange={this.updateInput} defaultValue={this.state.defaultValue}  margin="dense" size="small" requiered="true" type="number"/>
+			  <br/><br/>
             
               
           </form>

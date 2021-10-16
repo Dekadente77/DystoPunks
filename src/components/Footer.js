@@ -3,7 +3,7 @@ import '../styles/Global.css';
 import {Button, Container} from '@material-ui/core';
 
 const styleClaim = {
-  backgroundColor: '#27D3CB',
+  backgroundColor: '#E54286',
   color: '#12173D',
   fontSize: 'calc(12px + 2vmin)',
   fontFamily: 'm5x7',
