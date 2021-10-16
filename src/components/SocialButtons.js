@@ -41,7 +41,7 @@ function SocialButtons() {
             <Button style={styleClaim} variant="contained" size="large" href="" target="_blank" rel="noopener noreferrer"><b>Claim 300 $CREDS</b></Button>&nbsp;
             <Button style={styleBuy} variant="contained" size="large" href="" target="_blank" rel="noopener noreferrer"><b>Mint Crates</b></Button>&nbsp;
             <TextField style={{maxWidth: "100px"}} variant="filled" margin="dense" size="small" requiered="true" type="number"/>
-        </form>
+        </form><br/>
     </div>
   );
 }

@@ -11,22 +11,11 @@ const Web3 = require('web3');
 
 // MAINNET
 //const OPENSEA_WEB = "https://opensea.io/assets/0xbEA8123277142dE42571f1fAc045225a1D347977/";
-const NFT_CONTRACT_ADDRESS = "0xbEA8123277142dE42571f1fAc045225a1D347977";
-
+const NFT_CONTRACT_ADDRESS = "0xF548DD34827B26413314dA61289610FF4EBe5596";
+const CRATES_CONTRACT_ADDRESS = "0x9EfeFD8f196e072D9c1fB8fecE3f68b7d7847eB5";
 const NFT_ABI =[
 	{
-		"inputs": [
-			{
-				"internalType": "string",
-				"name": "baseTokenURI",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "baseContractURI",
-				"type": "string"
-			}
-		],
+		"inputs": [],
 		"stateMutability": "nonpayable",
 		"type": "constructor"
 	},
@@ -42,13 +31,13 @@ const NFT_ABI =[
 			{
 				"indexed": true,
 				"internalType": "address",
-				"name": "approved",
+				"name": "spender",
 				"type": "address"
 			},
 			{
-				"indexed": true,
+				"indexed": false,
 				"internalType": "uint256",
-				"name": "tokenId",
+				"name": "value",
 				"type": "uint256"
 			}
 		],
@@ -61,7 +50,538 @@ const NFT_ABI =[
 			{
 				"indexed": true,
 				"internalType": "address",
+				"name": "previousOwner",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "newOwner",
+				"type": "address"
+			}
+		],
+		"name": "OwnershipTransferred",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "from",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "to",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "value",
+				"type": "uint256"
+			}
+		],
+		"name": "Transfer",
+		"type": "event"
+	},
+	{
+		"inputs": [],
+		"name": "BASE_RATE",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "DystoAddress",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "END",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "INITIAL_ISSUANCE",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "MAX_CLAIM",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "START",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
 				"name": "owner",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "spender",
+				"type": "address"
+			}
+		],
+		"name": "allowance",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "spender",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "amount",
+				"type": "uint256"
+			}
+		],
+		"name": "approve",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "account",
+				"type": "address"
+			}
+		],
+		"name": "balanceOf",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "amount",
+				"type": "uint256"
+			}
+		],
+		"name": "burn",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "account",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "amount",
+				"type": "uint256"
+			}
+		],
+		"name": "burnFrom",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "claim",
+		"outputs": [],
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "decimals",
+		"outputs": [
+			{
+				"internalType": "uint8",
+				"name": "",
+				"type": "uint8"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "spender",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "subtractedValue",
+				"type": "uint256"
+			}
+		],
+		"name": "decreaseAllowance",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "spender",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "addedValue",
+				"type": "uint256"
+			}
+		],
+		"name": "increaseAllowance",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "lastUpdate",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "name",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "owner",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "punkid",
+				"type": "uint256"
+			}
+		],
+		"name": "punkCreds",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "renounceOwnership",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "to",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "amount",
+				"type": "uint256"
+			}
+		],
+		"name": "reservedCreds",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "saleIsActive",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "bool",
+				"name": "newState",
+				"type": "bool"
+			}
+		],
+		"name": "setSaleState",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "symbol",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "ownwer",
+				"type": "address"
+			}
+		],
+		"name": "totalAvailable",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "totalSupply",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "recipient",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "amount",
+				"type": "uint256"
+			}
+		],
+		"name": "transfer",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "sender",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "recipient",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "amount",
+				"type": "uint256"
+			}
+		],
+		"name": "transferFrom",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "newOwner",
+				"type": "address"
+			}
+		],
+		"name": "transferOwnership",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "unclaimedCreds",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
+];
+
+
+const CRATES_ABI =[
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "account",
 				"type": "address"
 			},
 			{
@@ -105,6 +625,12 @@ const NFT_ABI =[
 			{
 				"indexed": true,
 				"internalType": "address",
+				"name": "operator",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
 				"name": "from",
 				"type": "address"
 			},
@@ -115,252 +641,86 @@ const NFT_ABI =[
 				"type": "address"
 			},
 			{
-				"indexed": true,
-				"internalType": "uint256",
-				"name": "tokenId",
-				"type": "uint256"
+				"indexed": false,
+				"internalType": "uint256[]",
+				"name": "ids",
+				"type": "uint256[]"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256[]",
+				"name": "values",
+				"type": "uint256[]"
 			}
 		],
-		"name": "Transfer",
+		"name": "TransferBatch",
 		"type": "event"
 	},
 	{
-		"inputs": [],
-		"name": "MAX_SPUNKS",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
+		"anonymous": false,
 		"inputs": [
 			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "operator",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "from",
+				"type": "address"
+			},
+			{
+				"indexed": true,
 				"internalType": "address",
 				"name": "to",
 				"type": "address"
 			},
 			{
+				"indexed": false,
 				"internalType": "uint256",
-				"name": "tokenId",
+				"name": "id",
 				"type": "uint256"
-			}
-		],
-		"name": "approve",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "_to",
-				"type": "address"
 			},
 			{
+				"indexed": false,
 				"internalType": "uint256",
-				"name": "_NumberOfPunks",
+				"name": "value",
 				"type": "uint256"
 			}
 		],
-		"name": "authClaim",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
+		"name": "TransferSingle",
+		"type": "event"
 	},
 	{
+		"anonymous": false,
 		"inputs": [
 			{
-				"internalType": "address",
-				"name": "owner",
-				"type": "address"
-			}
-		],
-		"name": "balanceOf",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "calculatePrice",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "claimDystoPunk",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "contractURI",
-		"outputs": [
-			{
+				"indexed": false,
 				"internalType": "string",
-				"name": "",
+				"name": "value",
 				"type": "string"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "tokenId",
-				"type": "uint256"
-			}
-		],
-		"name": "getApproved",
-		"outputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "numDystoPunks",
-				"type": "uint256"
-			}
-		],
-		"name": "getDystoPunk",
-		"outputs": [],
-		"stateMutability": "payable",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "hasSaleStarted",
-		"outputs": [
-			{
-				"internalType": "bool",
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "owner",
-				"type": "address"
 			},
 			{
-				"internalType": "address",
-				"name": "operator",
-				"type": "address"
-			}
-		],
-		"name": "isApprovedForAll",
-		"outputs": [
-			{
-				"internalType": "bool",
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "_to",
-				"type": "address"
-			}
-		],
-		"name": "isAuthClaim",
-		"outputs": [
-			{
+				"indexed": true,
 				"internalType": "uint256",
-				"name": "",
+				"name": "id",
 				"type": "uint256"
 			}
 		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "name",
-		"outputs": [
-			{
-				"internalType": "string",
-				"name": "",
-				"type": "string"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "owner",
-		"outputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
+		"name": "URI",
+		"type": "event"
 	},
 	{
 		"inputs": [
 			{
 				"internalType": "uint256",
-				"name": "tokenId",
+				"name": "numberOfTokens",
 				"type": "uint256"
 			}
 		],
-		"name": "ownerOf",
-		"outputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "pauseSale",
+		"name": "mint",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"
@@ -375,12 +735,32 @@ const NFT_ABI =[
 	{
 		"inputs": [
 			{
-				"internalType": "uint256",
-				"name": "numDystoPunks",
-				"type": "uint256"
+				"internalType": "address",
+				"name": "from",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "to",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256[]",
+				"name": "ids",
+				"type": "uint256[]"
+			},
+			{
+				"internalType": "uint256[]",
+				"name": "amounts",
+				"type": "uint256[]"
+			},
+			{
+				"internalType": "bytes",
+				"name": "data",
+				"type": "bytes"
 			}
 		],
-		"name": "reserveAirdrop",
+		"name": "safeBatchTransferFrom",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"
@@ -399,35 +779,17 @@ const NFT_ABI =[
 			},
 			{
 				"internalType": "uint256",
-				"name": "tokenId",
+				"name": "id",
 				"type": "uint256"
-			}
-		],
-		"name": "safeTransferFrom",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "from",
-				"type": "address"
-			},
-			{
-				"internalType": "address",
-				"name": "to",
-				"type": "address"
 			},
 			{
 				"internalType": "uint256",
-				"name": "tokenId",
+				"name": "amount",
 				"type": "uint256"
 			},
 			{
 				"internalType": "bytes",
-				"name": "_data",
+				"name": "data",
 				"type": "bytes"
 			}
 		],
@@ -457,21 +819,194 @@ const NFT_ABI =[
 	{
 		"inputs": [
 			{
-				"internalType": "string",
-				"name": "baseURI",
-				"type": "string"
+				"internalType": "bool",
+				"name": "newState",
+				"type": "bool"
 			}
 		],
-		"name": "setBaseURI",
+		"name": "setSaleState",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
-		"inputs": [],
-		"name": "startSale",
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "newOwner",
+				"type": "address"
+			}
+		],
+		"name": "transferOwnership",
 		"outputs": [],
 		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "uri",
+				"type": "string"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "account",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "id",
+				"type": "uint256"
+			}
+		],
+		"name": "balanceOf",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address[]",
+				"name": "accounts",
+				"type": "address[]"
+			},
+			{
+				"internalType": "uint256[]",
+				"name": "ids",
+				"type": "uint256[]"
+			}
+		],
+		"name": "balanceOfBatch",
+		"outputs": [
+			{
+				"internalType": "uint256[]",
+				"name": "",
+				"type": "uint256[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "BurnAddress",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "CredsAddress",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "DystoAddress",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "id",
+				"type": "uint256"
+			}
+		],
+		"name": "exists",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "account",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "operator",
+				"type": "address"
+			}
+		],
+		"name": "isApprovedForAll",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "owner",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "saleIsActive",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
 		"type": "function"
 	},
 	{
@@ -494,51 +1029,14 @@ const NFT_ABI =[
 		"type": "function"
 	},
 	{
-		"inputs": [],
-		"name": "symbol",
-		"outputs": [
-			{
-				"internalType": "string",
-				"name": "",
-				"type": "string"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "index",
-				"type": "uint256"
-			}
-		],
-		"name": "tokenByIndex",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
 		"inputs": [
 			{
 				"internalType": "address",
-				"name": "owner",
+				"name": "ownwer",
 				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "index",
-				"type": "uint256"
 			}
 		],
-		"name": "tokenOfOwnerByIndex",
+		"name": "totalAvailable",
 		"outputs": [
 			{
 				"internalType": "uint256",
@@ -553,42 +1051,10 @@ const NFT_ABI =[
 		"inputs": [
 			{
 				"internalType": "uint256",
-				"name": "_tokenId",
+				"name": "id",
 				"type": "uint256"
 			}
 		],
-		"name": "tokenURI",
-		"outputs": [
-			{
-				"internalType": "string",
-				"name": "",
-				"type": "string"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "_owner",
-				"type": "address"
-			}
-		],
-		"name": "tokensOfOwner",
-		"outputs": [
-			{
-				"internalType": "uint256[]",
-				"name": "",
-				"type": "uint256[]"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
 		"name": "totalSupply",
 		"outputs": [
 			{
@@ -603,48 +1069,23 @@ const NFT_ABI =[
 	{
 		"inputs": [
 			{
-				"internalType": "address",
-				"name": "from",
-				"type": "address"
-			},
-			{
-				"internalType": "address",
-				"name": "to",
-				"type": "address"
-			},
-			{
 				"internalType": "uint256",
-				"name": "tokenId",
+				"name": "",
 				"type": "uint256"
 			}
 		],
-		"name": "transferFrom",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
+		"name": "uri",
+		"outputs": [
 			{
-				"internalType": "address",
-				"name": "newOwner",
-				"type": "address"
+				"internalType": "string",
+				"name": "",
+				"type": "string"
 			}
 		],
-		"name": "transferOwnership",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "withdrawAll",
-		"outputs": [],
-		"stateMutability": "payable",
+		"stateMutability": "view",
 		"type": "function"
 	}
 ];
-
 const style = {
   backgroundColor: '#8CFF9B',
   color: '#12173D',
@@ -703,13 +1144,11 @@ class ClaimButtons extends React.Component {
 
     this.state = {
       currentAccount: null,
-      totalSupply: 0,
+      totalAllowance: 0,
       isSendingTransaction: false,
       purchaseNumber: "1",
       hasSaleStarted: false,
       isMainnet: true,
-      unitPrice: 0,
-      ownedPunks: [],
       statusString: null,
       defaultValue: 1,
       isAuthClaim: 0,
@@ -719,12 +1158,17 @@ class ClaimButtons extends React.Component {
   
   }
 
+
   async handleClick() {
-    await this.buyPunk(NFT_CONTRACT_ADDRESS, NFT_ABI,this.textInput.value);
+    await this.buyCrates(CRATES_CONTRACT_ADDRESS, CRATES_ABI,this.textInput.value);
+  }
+
+  async handleAprobal() {
+    await this.aprobalCrates(NFT_CONTRACT_ADDRESS, NFT_ABI,this.textInput.value);
   }
 
   async handleClaim() {
-    await this.claimPunk(NFT_CONTRACT_ADDRESS, NFT_ABI,this.textInput.value);
+    await this.claimCreds(NFT_CONTRACT_ADDRESS, NFT_ABI,this.textInput.value);
   }
 
 
@@ -755,6 +1199,11 @@ class ClaimButtons extends React.Component {
       { gasLimit: "1000000" }
     );
 
+    this.cratesContract = new this.web3.eth.Contract(
+      CRATES_ABI,
+      CRATES_CONTRACT_ADDRESS,
+      { gasLimit: "1000000" }
+    );
 
     this.connect()
 
@@ -834,7 +1283,70 @@ class ClaimButtons extends React.Component {
   }
 
 
-  buyPunk = (contractAddress, contractABI, numPurchase) => {
+  buyCrates = (contractAddress, contractABI, numPurchase) => {
+
+   
+
+    const account = this.state.currentAccount;
+
+    if (account === null) {
+      console.log('no account detected');
+      this.connect();
+      return;
+    }
+    numPurchase=parseInt(numPurchase);
+
+
+    this.setState({
+      isSendingTransaction: true,
+    });
+
+  
+      const encodedAdoptFunction = this.cratesContract.methods.mint(numPurchase).encodeABI();
+
+      const transactionOptions = {
+        from: account,
+        to: contractAddress,
+        data: encodedAdoptFunction,
+        value: 0,
+      };
+      this.web3.eth.sendTransaction(transactionOptions, (err, transactionId) => {
+        if  (err) {
+          console.log('Crates mint failed', err)
+          this.setState({
+            isSendingTransaction: false,
+            statusString: "Crates mint failed!"
+          });
+        } else {
+          console.log('Payment successful', transactionId);
+          this.setState({
+            isSendingTransaction: false,
+            statusString: "Crates mint successful! Please check Metamask for details and refresh when its done."
+          });
+        }
+      }).on("confirmation", (confirmationNumber, receipt) => {
+          console.log("on confirmation", confirmationNumber);
+          window.location.reload(false);
+
+      });
+   
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  aprobalCrates = (contractAddress, contractABI, numPurchase) => {
 
    
 
@@ -854,34 +1366,35 @@ class ClaimButtons extends React.Component {
       isSendingTransaction: true,
     });
 
-    this.nftContract.methods.calculatePrice().call().then((unitPrice) => {
-      const encodedAdoptFunction = this.nftContract.methods.getDystoPunk(numPurchase).encodeABI();
+      const amount = Web3.utils.toBN('77000000000000000000000000');
+      const encodedAdoptFunction = this.nftContract.methods.approve(CRATES_CONTRACT_ADDRESS,amount).encodeABI();
 
       const transactionOptions = {
         from: account,
         to: contractAddress,
         data: encodedAdoptFunction,
-        value: unitPrice*numPurchase,
+        value: 0,
       };
       this.web3.eth.sendTransaction(transactionOptions, (err, transactionId) => {
         if  (err) {
-          console.log('Payment failed', err)
+          console.log('approve failed', err)
           this.setState({
             isSendingTransaction: false,
             statusString: "Payment failed!"
           });
         } else {
-          console.log('Payment successful', transactionId)
+          console.log('approve successful', transactionId)
           this.setState({
             isSendingTransaction: false,
-            statusString: "Payment successful! Please check Metamask for details and refresh when its done."
+            statusString: "approve successful!."
           });
+          
         }
       });
-    });
+
   }
 
-  claimPunk = (contractAddress, contractABI) => {
+  claimCreds = (contractAddress, contractABI) => {
 
    
 
@@ -897,8 +1410,8 @@ class ClaimButtons extends React.Component {
       isSendingTransaction: true,
     });
 
-    this.nftContract.methods.calculatePrice().call().then((unitPrice) => {
-      const encodedAdoptFunction = this.nftContract.methods.claimDystoPunk().encodeABI();
+    this.nftContract.methods.totalAvailable(this.state.currentAccount).call().then((unitPrice) => {
+      const encodedAdoptFunction = this.nftContract.methods.claim().encodeABI();
 
       const transactionOptions = {
         from: account,
@@ -926,24 +1439,23 @@ class ClaimButtons extends React.Component {
 
 
   updateInitialStates = () => { 
-    this.updateTotalSupply();
+    this.updateTotalAllowance();
     this.updateHasSaleStarted();
-    this.updateUnitPrice();
-    this.updateOwnedPunks();
     this.updateIsAuthClaim();
   }
 
-  updateTotalSupply = () => {
-    console.log("called totalSupply");
-    this.nftContract.methods.totalSupply().call().then((totalSupply) => {
+  updateTotalAllowance = () => {
+    console.log("called totalAllowance");
+    this.nftContract.methods.allowance(this.state.currentAccount,CRATES_CONTRACT_ADDRESS).call().then((totalAllowance) => {
+      totalAllowance = parseInt(Web3.utils.fromWei(totalAllowance, 'ether'));
       this.setState({
-        totalSupply: totalSupply,
+        totalAllowance: totalAllowance,
       });
     });
   }
 
   updateHasSaleStarted = () => {
-    this.nftContract.methods.hasSaleStarted().call().then((hasSaleStarted) => {
+    this.nftContract.methods.saleIsActive().call().then((hasSaleStarted) => {
       this.setState({
         hasSaleStarted: hasSaleStarted
       });
@@ -951,30 +1463,17 @@ class ClaimButtons extends React.Component {
   }
 
   updateIsAuthClaim = () => {
-    this.nftContract.methods.isAuthClaim(this.state.currentAccount).call().then((isAuthClaim) => {
+    this.nftContract.methods.totalAvailable(this.state.currentAccount).call().then((isAuthClaim) => {
+      const credsAvaliable = Web3.utils.fromWei(isAuthClaim, 'ether');
+      console.log(credsAvaliable);
       this.setState({
-        isAuthClaim: isAuthClaim
+        isAuthClaim: credsAvaliable
       });
     });
   }
 
-  updateUnitPrice = () => {
-    this.nftContract.methods.calculatePrice().call().then((unitPrice) => {
-      this.setState({
-        unitPrice: this.web3.utils.fromWei(unitPrice, "ether")
-      });
-    });
-  }
 
-  updateOwnedPunks = () => {
-    if (this.state.currentAccount) {
-      this.nftContract.methods.tokensOfOwner(this.state.currentAccount).call().then((ownedPunks) => {
-        this.setState({
-          ownedPunks: ownedPunks
-        });
-      });
-    }
-  }
+
 
   updateInput(evt){
     this.textInput={value: evt.target.value};   
@@ -984,7 +1483,7 @@ class ClaimButtons extends React.Component {
     return (
       <div>
         <div className="sticky-cta">
-           <div className='metamask'>
+           <div className='metamask'> {this.state.hasSaleStarted}
                {this.state.currentAccount ? (
                        <Fab style={style} variant="extended">
                              <b>{this.state.currentAccount.substring(0, 6)}...{this.state.currentAccount.substring(this.state.currentAccount.length -4)}</b>
@@ -998,24 +1497,29 @@ class ClaimButtons extends React.Component {
              </div>
         </div>
         <div className="App">
-        {this.state.hasSaleStarted &&
+    
           <form noValidate autoComplete="off">
-              <p>{this.state.statusString} </p>
-              {this.state.isAuthClaim > 0 &&
+             
+        
+              <Button style={styleClaim} variant="contained" size="large" onClick={() => this.handleClaim()}><b>Claim {this.state.isAuthClaim} $CREDS</b></Button>
+              {this.state.totalAllowance > 0 ? (
+                  <Button style={styleBuy} variant="contained" size="large" onClick={() => this.handleClick()}><b>Mint Crates</b></Button>
+                 ) :
+                  <div>
+                  <Button style={styleBuy} variant="contained" size="large" onClick={() => this.handleAprobal()}><b>Aproval</b></Button>
+                  <Button style={styleBuy} variant="contained" size="large" onClick={() => this.handleClick()}><b>Mint Crates</b></Button>
+                  </div>
+              } 
               
-                 <Button style={styleClaim} variant="contained" size="large" onClick={() => this.handleClaim()}><b>Claim Free Punks</b></Button>
-  
-              }
-              <Button style={styleBuy} variant="contained" size="large" onClick={() => this.handleClick()}><b>Buy DystoPunks</b></Button>&nbsp;
               <TextField style={{maxWidth: "100px"}} label="MAX 20" variant="filled" onChange={this.updateInput} defaultValue={this.state.defaultValue}  margin="dense" size="small" requiered="true" type="number" inputProps={inputProps}/>
               
               
-               <p style={{marginBottom: "20px"}}><b style={{color: '#E54286'}}>{this.state.totalSupply}/2077</b> SOLD | Current Price: <b style={{color: '#E54286'}}>{this.state.unitPrice}</b> <b>ETH</b></p>
+               <p style={{marginBottom: "20px"}}><b style={{color: '#E54286'}}>{this.state.totalAllowance}/2077</b> SOLD | Current Price: <b style={{color: '#E54286'}}>{this.state.unitPrice}</b> <b>ETH</b></p>
 
             
               
           </form>
-        }  
+
         </div>
       </div>
      

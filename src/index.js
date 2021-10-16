@@ -14,7 +14,6 @@ ReactDOM.render(
     <App />
     <ClaimButtons />
     <SocialButtons />
-    <DystoPunks />
     <Footer />
   </React.StrictMode>,
   document.getElementById('root')
