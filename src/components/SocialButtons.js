@@ -18,7 +18,7 @@ const styleClaim = {
   };
 
 const styleBuy = {
-    backgroundColor: '#B483EF',
+    backgroundColor: '#8CFF9B',
     color: '#12173D',
     fontSize: 'calc(12px + 2vmin)',
     fontFamily: 'm5x7',
