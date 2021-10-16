@@ -15,6 +15,7 @@ ReactDOM.render(
   <React.StrictMode>
     <App />
     <ClaimButtons />
+    <Footer />
   </React.StrictMode>,
   document.getElementById('root')
 );
