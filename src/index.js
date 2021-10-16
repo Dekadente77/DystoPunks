@@ -5,7 +5,6 @@ import './styles/Global.css';
 import App from './components/App';
 import reportWebVitals from './reportWebVitals';
 import ClaimButtons from './components/ClaimButtons';
-import SocialButtons from './components/SocialButtons';
 import DystoTable from './components/DystoTable'
 import DystoTraits from './components/DystoTraits'
 import Text from './components/Text';
@@ -16,7 +15,6 @@ ReactDOM.render(
   <React.StrictMode>
     <App />
     <ClaimButtons />
-    <SocialButtons />
   </React.StrictMode>,
   document.getElementById('root')
 );
