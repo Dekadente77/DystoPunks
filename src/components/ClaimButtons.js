@@ -1506,7 +1506,7 @@ class ClaimButtons extends React.Component {
                   <Button style={styleBuy} variant="contained" size="large" onClick={() => this.handleClick()}><b>Mint Crates</b></Button>
                  ) :
                   <div><br/>
-                  <Button style={styleBuy} variant="contained" size="large" onClick={() => this.handleAprobal()}><b>Aproval for Mint </b></Button>&nbsp;
+                  <Button style={styleBuy} variant="contained" size="large" onClick={() => this.handleAprobal()}><b>Approval for Mint </b></Button>&nbsp;
                   <Button style={styleBuy} variant="contained" size="large" onClick={() => this.handleClick()}><b>Mint Crates</b></Button>
                   </div>
               } 
