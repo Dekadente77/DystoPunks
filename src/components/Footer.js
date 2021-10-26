@@ -26,6 +26,7 @@ function Footer() {
         <a href="https://discord.gg/DystoPunks" target="_blank" rel="noopener noreferrer"><b>Discord</b></a> | <a href="https://dystopunks.medium.com/" target="_blank" rel="noopener noreferrer"><b>Medium</b></a> | <a href="https://twitter.com/DystoPunks" target="_blank" rel="noopener noreferrer"><b>Twitter</b></a>
         <br/>
         <b style={{color: '#E54286'}}>© 2021 DystoPunks</b><br/><br/>
+        To mint a <b>Crate</b> you need a <b>DystoPunk</b> and burn <b>300 $CREDS</b><br/><br/>
         Inspired by <b>CyberKongz</b> and <b>CryptoPunks</b>.<br/>
         This project is not affiliated with <b>Larva Labs</b>.<br/><br/>
         </p>
